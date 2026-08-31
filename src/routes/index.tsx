@@ -19,9 +19,6 @@ import {
 } from "lucide-react";
 import heroPoster from "../assets/hero-poster.jpg";
 import heroVideo from "../assets/hero-video.mp4.asset.json";
-import waterTreatmentProject from "../assets/water-treatment-project.jpg";
-import scadaControlRoom from "../assets/scada-control-room.jpg";
-import solarUtilityProject from "../assets/solar-utility-project.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -148,27 +145,6 @@ const certifications = [
   { code: "ISO 45001:2018", label: "Occupational Health & Safety" },
 ];
 
-const projectViews = [
-  {
-    image: waterTreatmentProject,
-    title: "Water, engineered at scale",
-    label: "Treatment infrastructure",
-    className: "lg:col-span-2",
-  },
-  {
-    image: scadaControlRoom,
-    title: "Every process in view",
-    label: "SCADA & automation",
-    className: "",
-  },
-  {
-    image: solarUtilityProject,
-    title: "Efficiency beyond the plant",
-    label: "Solar utility systems",
-    className: "",
-  },
-];
-
 const navItems = [
   { label: "Home", href: "#top" },
   { label: "About", href: "#about" },
@@ -247,7 +223,7 @@ function Index() {
           playsInline
         />
         <div className="absolute inset-0 bg-background/70" />
-        <div className="relative mx-auto grid w-full max-w-6xl items-end gap-12 px-4 py-24 sm:px-6 lg:grid-cols-[1fr_0.72fr]">
+        <div className="relative mx-auto w-full max-w-6xl px-4 py-24 sm:px-6">
           <div className="max-w-2xl animate-fade-in">
             <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-primary">
               Since 1998 · Bhopal, India
@@ -265,24 +241,6 @@ function Index() {
             >
               Discuss Your Project
             </a>
-          </div>
-          <div className="hidden lg:block">
-            <div className="overflow-hidden rounded-lg border border-primary-foreground/30 bg-background/20 shadow-xl backdrop-blur-sm">
-              <img
-                src={waterTreatmentProject}
-                alt="Circular water treatment basins at a modern plant"
-                width={1600}
-                height={1008}
-                className="aspect-[4/3] w-full object-cover transition-transform duration-700 hover:scale-105"
-              />
-              <div className="flex items-center justify-between gap-4 border-t border-primary-foreground/20 bg-background/90 px-5 py-4">
-                <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">Featured capability</p>
-                  <p className="mt-1 font-heading text-lg font-semibold">Water systems that perform</p>
-                </div>
-                <span className="font-heading text-2xl font-bold text-primary">01</span>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -306,44 +264,6 @@ function Index() {
             <Stat value={1998} suffix="" label="Established & operating since" />
             <Stat value={3} suffix="×" label="ISO certified — 9001, 14001, 45001" />
             <Stat value={200} suffix="+ Cr" label="Project portfolio value (₹)" />
-          </div>
-        </div>
-      </section>
-
-      {/* Project views */}
-      <section className="border-b border-border bg-secondary/50 py-20">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6">
-          <Reveal>
-            <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
-              <div>
-                <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">Inside the work</p>
-                <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight">Infrastructure with a point of view</h2>
-              </div>
-              <p className="max-w-sm text-sm leading-relaxed text-muted-foreground">
-                From the treatment basin to the control room, every detail is designed for dependable operation.
-              </p>
-            </div>
-          </Reveal>
-          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:grid-rows-2">
-            {projectViews.map((project, index) => (
-              <Reveal key={project.title} className={project.className}>
-                <article className={`group relative h-full min-h-[280px] overflow-hidden rounded-lg bg-card ${index === 0 ? "lg:row-span-2" : ""}`}>
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    width={index === 0 ? 1600 : 1200}
-                    height={index === 0 ? 1008 : 912}
-                    loading="lazy"
-                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-foreground/45 transition-colors duration-300 group-hover:bg-foreground/35" />
-                  <div className="absolute inset-x-0 bottom-0 p-6 text-primary-foreground">
-                    <p className="text-xs font-semibold uppercase tracking-[0.16em] text-primary-foreground/75">{project.label}</p>
-                    <h3 className="mt-2 max-w-xs font-heading text-xl font-semibold leading-tight">{project.title}</h3>
-                  </div>
-                </article>
-              </Reveal>
-            ))}
           </div>
         </div>
       </section>
