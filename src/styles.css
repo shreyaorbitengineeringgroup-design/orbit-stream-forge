@@ -121,8 +121,8 @@
   --sidebar-ring: oklch(0.551 0.027 264.364);
 }
 
-@theme inline {
-  --font-heading: var(--font-heading);
+@theme {
+  --font-heading: "Archivo", system-ui, sans-serif;
   --font-sans: "Inter", system-ui, sans-serif;
 }
 
