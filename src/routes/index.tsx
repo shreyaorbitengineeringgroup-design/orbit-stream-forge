@@ -53,7 +53,7 @@ function Reveal({ children, className = "" }: { children: ReactNode; className?:
     if (!el) return;
     const obs = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
+        if (entry?.isIntersecting) {
           setVisible(true);
           obs.disconnect();
         }
@@ -82,7 +82,7 @@ function Stat({ value, suffix, label }: { value: number; suffix: string; label: 
     if (!el) return;
     const obs = new IntersectionObserver(
       ([entry]) => {
-        if (!entry.isIntersecting) return;
+        if (!entry?.isIntersecting) return;
         obs.disconnect();
         const duration = 1200;
         const start = performance.now();
@@ -216,7 +216,7 @@ function Index() {
         <video
           className="absolute inset-0 h-full w-full object-cover"
           src={heroVideo.url}
-          poster={heroPoster.src}
+          poster={heroPoster}
           autoPlay
           muted
           loop
